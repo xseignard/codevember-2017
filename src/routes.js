@@ -11,7 +11,7 @@ const Routes = props => (
 	<BrowserRouter>
 		<div>
 			<Route exact path="/" component={Home} />
-			<Route exact path="/1" component={D1} />
+			<Route exact path="/D1" component={D1} />
 		</div>
 	</BrowserRouter>
 );
