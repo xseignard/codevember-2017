@@ -1,0 +1,16 @@
+.title {
+	position: absolute;
+	width: 100%;
+	z-index: 1;
+}
+.title h1 {
+	display: block;
+	font-family: 'Titillium Web', sans-serif;
+	color: white;
+	text-align: center;
+	margin: 5px 0;
+}
+.title a {
+	display: block;
+	text-align: center;
+}

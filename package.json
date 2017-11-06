@@ -1,0 +1,40 @@
+{
+	"name": "codevember-2017",
+	"version": "1.0.0",
+	"description": "My codevember session",
+	"scripts": {
+		"start": "webpack-dev-server --progress --colors",
+		"build": "NPM_BUILD=production webpack --progress --colors"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/xseignard/codevember-2017.git"
+	},
+	"author": "Xavier Seignard <xavier.seignard@gmail.com>",
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/xseignard/codevember-2017/issues"
+	},
+	"homepage": "https://github.com/xseignard/codevember-2017#readme",
+	"devDependencies": {
+		"babel-core": "^6.26.0",
+		"babel-loader": "^7.1.2",
+		"babel-preset-env": "^1.6.1",
+		"babel-preset-react": "^6.24.1",
+		"css-loader": "^0.28.7",
+		"file-loader": "^1.1.5",
+		"html-webpack-plugin": "^2.30.1",
+		"style-loader": "^0.18.2",
+		"webpack": "^3.6.0",
+		"webpack-dev-server": "^2.8.2",
+		"webpack-glsl-loader": "^1.0.1"
+	},
+	"dependencies": {
+		"gsap": "^1.20.2",
+		"react": "^16.0.0",
+		"react-dom": "^16.0.0",
+		"react-router-dom": "^4.2.2",
+		"stats.js": "^0.17.0",
+		"three": "^0.87.1"
+	}
+}
