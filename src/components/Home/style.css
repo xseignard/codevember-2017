@@ -1,0 +1,83 @@
+:root {
+	--border-size: 0.5px;
+}
+.home {
+	position: absolute;
+	display: flex;
+	flex-direction: column;
+	background-color: black;
+	border: var(--border-size) solid white;
+	min-height: 100%;
+	width: 100%;
+	box-sizing: border-box;
+	color: white;
+}
+
+.home header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	border-bottom: var(--border-size) solid white;
+	/*flex-direction: column;*/
+	text-align: center;
+	padding: 0 10px;
+}
+
+.home header a {
+	color: white;
+	font-family: sans-serif;
+}
+
+.home h1 {
+	font-family: 'Oswald', sans-serif;
+	margin: 5px 0;
+	font-size: 1.7em;
+}
+
+.home section {
+	display: flex;
+	flex-direction: column;
+	flex: 1;
+	font-family: sans-serif;
+}
+
+.day {
+	flex: 0 0 300px;
+	border-bottom: var(--border-size) solid white;
+	display: flex;
+	cursor: pointer;
+	color: unset;
+	text-decoration: unset;
+}
+
+.day > div {
+	flex: 0 0 50%;
+	box-sizing: border-box;
+}
+.day > div:first-child {
+	border-right: calc(var(--border-size) / 2) solid white;
+}
+.day > div:last-child {
+	border-left: calc(var(--border-size) / 2) solid white;
+}
+
+.day .info {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	transition: all 0.7s;
+}
+.day .info:hover {
+	color: black;
+	background-color: white;
+}
+
+.day .info > div {
+	padding: 0 15px;
+}
+
+.day .picture {
+	background-size: contain;
+	background-position: center;
+	background-repeat: no-repeat;
+}

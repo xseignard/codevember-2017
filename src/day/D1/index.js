@@ -16,6 +16,7 @@ class D1 extends Component {
 			axisHelper: false,
 		});
 		this.renderer = renderer;
+		this.stats = stats;
 
 		// to keep image proportions
 		const radiusX = 10;
@@ -68,7 +69,7 @@ class D1 extends Component {
 		scene.add(particleSystem);
 
 		const animate = timestamp => {
-			requestAnimationFrame(animate);
+			this.rafID = requestAnimationFrame(animate);
 			stats.begin();
 			// update the time uniform
 			uniforms.time.value = timestamp;
@@ -80,6 +81,11 @@ class D1 extends Component {
 
 	componentWillUnmount() {
 		this.renderer.dispose();
+		this.canvas.outerHTML = '';
+		this.stats.domElement.outerHTML = '';
+		delete this.canvas;
+		delete this.stats.domElement;
+		window.cancelAnimationFrame(this.rafID);
 	}
 
 	render() {

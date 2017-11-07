@@ -20,11 +20,13 @@ const initThree = (canvas, opts) => {
 	};
 	// merged opts
 	const mergedOpts = Object.assign({}, defaults, opts);
+	// root element
+	const root = document.querySelector('#root');
 	// stats
 	const stats = new Stats();
 	stats.domElement.style.bottom = '0px';
 	stats.domElement.style.top = '';
-	document.body.appendChild(stats.domElement);
+	root.appendChild(stats.domElement);
 
 	// renderer
 	const renderer = new THREE.WebGLRenderer({
@@ -36,7 +38,7 @@ const initThree = (canvas, opts) => {
 	renderer.domElement.style.position = 'absolute';
 	renderer.domElement.style.top = '0px';
 	renderer.domElement.style.left = '0px';
-	document.body.appendChild(renderer.domElement);
+	root.appendChild(renderer.domElement);
 
 	// scene
 	const scene = new THREE.Scene();
