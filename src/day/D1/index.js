@@ -5,8 +5,6 @@ import initThree from '../../utils/initThree';
 import Title from '../../components/Title';
 import Footer from '../../components/Footer';
 
-import './style.css';
-
 import vertexShader from './shaders/vertex.glsl';
 import fragmentShader from './shaders/fragment.glsl';
 import logo from './img/bigx.jpg';

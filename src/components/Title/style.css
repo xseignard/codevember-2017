@@ -2,15 +2,19 @@
 	position: absolute;
 	width: 100%;
 	z-index: 1;
+	box-sizing: border-box;
+	padding: 0 10px;
 }
 .title h1 {
 	display: block;
-	font-family: 'Titillium Web', sans-serif;
+	font-family: 'Oswald', sans-serif;
 	color: white;
 	text-align: center;
 	margin: 5px 0;
+	font-size: 1.7em;
 }
 .title a {
 	display: block;
 	text-align: center;
+	color: cyan;
 }

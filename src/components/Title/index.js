@@ -8,7 +8,7 @@ const Title = ({ title, url }) => {
 			<h1>{title}</h1>
 			{url && (
 				<a href={url} target="_blank">
-					{url}
+					More info
 				</a>
 			)}
 		</div>

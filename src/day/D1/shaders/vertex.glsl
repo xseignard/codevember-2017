@@ -1,5 +1,4 @@
 @import ../../../utils/shaders/rgb2hsv;
-@import ../../../utils/shaders/cubic-in-out;
 
 // coming from js
 uniform sampler2D texture;
@@ -29,7 +28,7 @@ void main() {
 	vAlpha = hsv.z;
 	// manipulate position of the vertex
 	vec3 newPos = position;
-	newPos.z += hsv.z * 6.0 * abs(cos(time * 0.0005));
+	newPos.z += hsv.z * 6.0 * abs(sin(time * 0.0005));
 	// size of the particle
 	gl_PointSize = 1.7;
 	// position of the particle

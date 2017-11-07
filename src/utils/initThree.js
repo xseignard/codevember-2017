@@ -22,6 +22,8 @@ const initThree = (canvas, opts) => {
 	const mergedOpts = Object.assign({}, defaults, opts);
 	// stats
 	const stats = new Stats();
+	stats.domElement.style.bottom = '0px';
+	stats.domElement.style.top = '';
 	document.body.appendChild(stats.domElement);
 
 	// renderer

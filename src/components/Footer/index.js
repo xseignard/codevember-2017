@@ -2,7 +2,7 @@ import React from 'react';
 
 import './style.css';
 
-const Title = () => {
+const Footer = () => {
 	return (
 		<div className="footer">
 			<p>
@@ -14,11 +14,11 @@ const Title = () => {
 			<p>
 				Code available at{' '}
 				<a href="https://github.com/xseignard/codevember-2017" target="_blank">
-					https://github.com/xseignard/codevember-2017
+					codevember-2017
 				</a>
 			</p>
 		</div>
 	);
 };
 
-export default Title;
+export default Footer;
