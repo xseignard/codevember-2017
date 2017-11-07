@@ -33,7 +33,6 @@ const Home = props => {
 				{index % 2 === 0 && (
 					<div className="picture" style={{ backgroundImage: `url(${day.picture})` }} />
 				)}
-				<div className="ruler" />
 			</Link>
 		);
 	});

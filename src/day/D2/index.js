@@ -48,7 +48,9 @@ class D2 extends Component {
 			var objLoader = new THREE.OBJLoader();
 			objLoader.setMaterials(materials);
 			objLoader.load(modelGeometry, object => {
-				this.setState({ loaded: true });
+				setTimeout(() => {
+					this.setState({ loaded: true });
+				}, 500);
 				object.traverse(node => {
 					if (node.material) node.material.side = THREE.DoubleSide;
 				});
