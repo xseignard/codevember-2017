@@ -54,7 +54,9 @@ class D2 extends Component {
 				object.rotation.set(-Math.PI / 2, 0, -Math.PI / 2);
 				object.position.set(2, -30, 0);
 				scene.add(object);
-				this.setState({ loaded: true });
+				setTimeout(() => {
+					this.setState({ loaded: true });
+				}, 3000);
 			});
 		});
 
