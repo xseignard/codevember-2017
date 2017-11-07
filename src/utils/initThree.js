@@ -1,6 +1,7 @@
 import * as THREE from 'three';
 import 'three/examples/js/controls/OrbitControls';
 import Stats from 'stats.js';
+import merge from 'lodash/merge';
 
 const initThree = (canvas, opts) => {
 	// default opts
@@ -19,7 +20,7 @@ const initThree = (canvas, opts) => {
 		axisHelper: true,
 	};
 	// merged opts
-	const mergedOpts = Object.assign({}, defaults, opts);
+	const mergedOpts = merge(defaults, opts);
 	// root element
 	const root = document.querySelector('#root');
 	// stats

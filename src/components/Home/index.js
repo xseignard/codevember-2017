@@ -4,11 +4,16 @@ import { Link } from 'react-router-dom';
 import './style.css';
 
 import d1 from './img/d1.png';
+import d2 from './img/d2.png';
 
 const days = [
 	{
 		title: 'Hommage to Bill Etra & Steve Rutt',
 		picture: d1,
+	},
+	{
+		title: 'The LU tower (Nantes, FR), photogrammetry',
+		picture: d2,
 	},
 ];
 
@@ -28,6 +33,7 @@ const Home = props => {
 				{index % 2 === 0 && (
 					<div className="picture" style={{ backgroundImage: `url(${day.picture})` }} />
 				)}
+				<div className="ruler" />
 			</Link>
 		);
 	});

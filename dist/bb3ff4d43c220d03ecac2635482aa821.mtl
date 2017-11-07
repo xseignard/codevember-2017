@@ -1,0 +1,7 @@
+newmtl TourLu_low_Material_u1_v1
+Ka 1 1 1
+Kd 1 1 1
+d 1
+Ns 0
+illum 1
+map_Kd TourLu_low_u1_v1.png
