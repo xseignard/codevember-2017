@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import * as THREE from 'three';
 import initThree from '../../utils/initThree';
+import FBO from '../../utils/fbo';
 import { spherePoints } from '../../utils/points';
 
 import Title from '../../components/Title';
 import Footer from '../../components/Footer';
 
-import FBO from './fbo';
 import simulationVert from './shaders/simulationVert.glsl';
 import simulationFrag from './shaders/simulationFrag.glsl';
 import renderVert from './shaders/renderVert.glsl';

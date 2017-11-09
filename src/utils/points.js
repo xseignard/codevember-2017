@@ -19,15 +19,46 @@ const getPoint = (v, size) => {
 };
 
 // returns an array of random 3D coordinates inside a -size/+size diameter sphere
-export const spherePoints = (width, height, size) => {
-	var len = width * height * 3;
-	var data = new Float32Array(len);
-	var p = new THREE.Vector3();
-	for (var i = 0; i < len; i += 3) {
+export const spherePoints = (width, height, size, alpha) => {
+	const dimension = alpha ? 4 : 3;
+	const len = width * height * dimension;
+	const data = new Float32Array(len);
+	const p = new THREE.Vector3();
+	for (let i = 0; i < len; i += dimension) {
 		getPoint(p, size);
 		data[i] = p.x;
 		data[i + 1] = p.y;
 		data[i + 2] = p.z;
+		// keep track of some sort of vertice index
+		if (alpha) data[i + 3] = i;
+	}
+	return data;
+};
+
+export const imagePoints = (image, width, height, elevation) => {
+	const img = new Image();
+	img.src = image;
+	const canvas = document.createElement('canvas');
+	canvas.width = width;
+	canvas.height = height;
+	const ctx = canvas.getContext('2d');
+	ctx.drawImage(img, 0, 0);
+
+	const imgData = ctx.getImageData(0, 0, width, height);
+	const iData = imgData.data;
+
+	const l = width * height;
+	const data = new Float32Array(l * 3);
+	for (let i = 0; i < l; i++) {
+		const i3 = i * 3;
+		const i4 = i * 4;
+		data[i3] = ((i % width) / width - 0.5) * width;
+		data[i3 + 1] =
+			(iData[i4] / 0xff * 0.299 +
+				iData[i4 + 1] / 0xff * 0.587 +
+				iData[i4 + 2] / 0xff * 0.114) *
+			elevation;
+		data[i3 + 2] = (i / width / height - 0.5) * height;
 	}
 	return data;
 };

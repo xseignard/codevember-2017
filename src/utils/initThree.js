@@ -8,6 +8,7 @@ const initThree = (canvas, opts) => {
 	const defaults = {
 		renderer: {
 			alpha: true,
+			shadowMap: false,
 		},
 		camera: {
 			fov: 75,
@@ -16,6 +17,9 @@ const initThree = (canvas, opts) => {
 			x: 0,
 			y: 2,
 			z: 20,
+		},
+		ambient: {
+			color: 0xffffff,
 		},
 		axisHelper: true,
 	};
@@ -39,6 +43,10 @@ const initThree = (canvas, opts) => {
 	renderer.domElement.style.position = 'absolute';
 	renderer.domElement.style.top = '0px';
 	renderer.domElement.style.left = '0px';
+	if (mergedOpts.renderer.shadowMap) {
+		renderer.shadowMap.enabled = true;
+		renderer.shadowMap.type = THREE.PCFShadowMap;
+	}
 	root.appendChild(renderer.domElement);
 
 	// scene
@@ -63,14 +71,8 @@ const initThree = (canvas, opts) => {
 	if (mergedOpts.axisHelper) scene.add(axisHelper);
 
 	// ambient light
-	const ambient = new THREE.AmbientLight(0xffffff);
+	const ambient = new THREE.AmbientLight(mergedOpts.ambient.color);
 	scene.add(ambient);
-
-	// directional light
-	const directionalLight = new THREE.DirectionalLight(0xffffff);
-	directionalLight.position.set(camera.position);
-	directionalLight.position.z = camera.position.z * 2;
-	scene.add(directionalLight);
 
 	const handleResize = () => {
 		camera.aspect = window.innerWidth / window.innerHeight;

@@ -45,7 +45,7 @@ class D2 extends Component {
 		const mtlLoader = new THREE.MTLLoader();
 		mtlLoader.load(modelMaterial, materials => {
 			materials.preload();
-			var objLoader = new THREE.OBJLoader();
+			const objLoader = new THREE.OBJLoader();
 			objLoader.setMaterials(materials);
 			objLoader.load(modelGeometry, object => {
 				object.traverse(node => {
@@ -82,7 +82,7 @@ class D2 extends Component {
 		return (
 			<div>
 				<Title
-					title="The LU tower (Nantes, FR), photogrammetry"
+					title="The LU tower (Nantes, FR), photogrammetry by Urbandrone"
 					url="http://knowing-nantes.blogspot.fr/2012/07/unique-place-at-nantes-le-lieu-unique.html"
 				/>
 				<Loader type="line-scale-pulse-out" active={!this.state.loaded} />

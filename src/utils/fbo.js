@@ -3,14 +3,14 @@ import * as THREE from 'three';
 // see: http://barradeau.com/blog/?p=621
 
 class FBO {
-	constructor(width, height, renderer, simulationMaterial, renderMaterial) {
+	constructor(width, height, renderer, simulationMaterial, renderMaterial, format) {
 		this.scene = new THREE.Scene();
 		this.camera = new THREE.OrthographicCamera(-1, 1, 1, -1, 1 / Math.pow(2, 53), 1);
 
 		const options = {
 			minFilter: THREE.NearestFilter, // important as we want to sample square pixels
 			magFilter: THREE.NearestFilter,
-			format: THREE.RGBFormat, // could be RGBAFormat
+			format: format || THREE.RGBFormat, // could be RGBAFormat
 			type: THREE.FloatType, // important as we need precise coordinates (not ints)
 		};
 		this.rtt = new THREE.WebGLRenderTarget(width, height, options);

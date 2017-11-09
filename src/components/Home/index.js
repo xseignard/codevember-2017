@@ -6,6 +6,7 @@ import './style.css';
 import d1 from './img/d1.png';
 import d2 from './img/d2.png';
 import d3 from './img/d3.png';
+import d4 from './img/d4.png';
 
 const days = [
 	{
@@ -19,6 +20,10 @@ const days = [
 	{
 		title: 'Slowmo sphere explosion, curl noise',
 		picture: d3,
+	},
+	{
+		title: 'Low poly sheep',
+		picture: d4,
 	},
 ];
 
