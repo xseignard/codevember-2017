@@ -27,7 +27,7 @@ if (process.env.NPM_BUILD === 'production') {
 
 module.exports = {
 	entry: './src/main.js',
-	devtool: 'eval-source-map',
+	devtool: 'cheap-module-source-map',
 	output: {
 		path: path.join(__dirname, 'dist'),
 		filename: 'bundle.js',

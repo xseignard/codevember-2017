@@ -5,6 +5,7 @@ import './style.css';
 
 import d1 from './img/d1.png';
 import d2 from './img/d2.png';
+import d3 from './img/d3.png';
 
 const days = [
 	{
@@ -14,6 +15,10 @@ const days = [
 	{
 		title: 'The LU tower (Nantes, FR), photogrammetry',
 		picture: d2,
+	},
+	{
+		title: 'Slowmo sphere explosion, curl noise',
+		picture: d3,
 	},
 ];
 
