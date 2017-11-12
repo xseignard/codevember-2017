@@ -7,6 +7,7 @@ import d1 from './img/d1.png';
 import d2 from './img/d2.png';
 import d3 from './img/d3.png';
 import d4 from './img/d4.png';
+import d5 from './img/d5.png';
 
 const days = [
 	{
@@ -24,6 +25,10 @@ const days = [
 	{
 		title: 'Low poly sheep',
 		picture: d4,
+	},
+	{
+		title: 'Shiny squared metaballs',
+		picture: d5,
 	},
 ];
 

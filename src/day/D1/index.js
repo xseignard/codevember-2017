@@ -76,7 +76,7 @@ class D1 extends Component {
 			renderer.render(scene, camera);
 			stats.end();
 		};
-		requestAnimationFrame(animate);
+		animate();
 	}
 
 	componentWillUnmount() {
